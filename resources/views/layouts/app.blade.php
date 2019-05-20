@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -44,10 +45,16 @@
                             <a href="#">Членове на сем.</a>
                         </li>
                         <li>
-                            <a href="#">Отчети</a>
+                            <a href="{{route('reports')}}">Отчети</a>
                         </li>
                         <li>
-                            <a href="#">Контакти</a>
+                            <a href="{{route('contacts')}}">Контакти</a>
+                        </li>
+                        <li>
+                            <a href="{{route('files.index')}}">Архиви</a>
+                        </li>
+                        <li>
+                            <a href="{{route('categories.index')}}">Категории</a>
                         </li>
                     </ul>
 
@@ -88,5 +95,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 </html>

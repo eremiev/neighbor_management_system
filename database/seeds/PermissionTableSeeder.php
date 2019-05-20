@@ -1,0 +1,710 @@
+<?php
+
+use App\Flat;
+use App\People;
+use App\Permission;
+use Illuminate\Database\Seeder;
+
+class PermissionTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $permissions = [
+
+            [
+                'flat_id' => Flat::findOrFail( 1)->id,
+                'people_id' => People::findOrFail( 1)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 1)->id,
+                'people_id' => People::findOrFail( 1)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 1)->id,
+                'people_id' => People::findOrFail( 2)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 1)->id,
+                'people_id' => People::findOrFail( 2)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 1)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => People::findOrFail( 3)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => People::findOrFail( 3)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => People::findOrFail( 4)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => People::findOrFail( 4)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => People::findOrFail( 5)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => People::findOrFail( 5)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 2)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => People::findOrFail( 6)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => People::findOrFail( 6)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => People::findOrFail( 7)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => People::findOrFail( 7)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => People::findOrFail( 8)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => People::findOrFail( 8)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => People::findOrFail( 9)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => People::findOrFail( 9)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 10)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 10)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 11)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 11)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 12)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 12)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 13)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => People::findOrFail( 13)->id,
+                'cost_type_id' => 4,
+                'permission' => false,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 5)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 6)->id,
+                'people_id' => People::findOrFail( 14)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 6)->id,
+                'people_id' => People::findOrFail( 14)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 6)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => People::findOrFail( 15)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => People::findOrFail( 15)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => People::findOrFail( 16)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => People::findOrFail( 16)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 17)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 17)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 18)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 18)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 19)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 19)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 20)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 20)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => People::findOrFail( 21)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => People::findOrFail( 21)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => People::findOrFail( 22)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => People::findOrFail( 22)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => People::findOrFail( 23)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => People::findOrFail( 23)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 9)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 10)->id,
+                'people_id' => People::findOrFail( 24)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 10)->id,
+                'people_id' => People::findOrFail( 24)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 10)->id,
+                'people_id' => People::findOrFail( 25)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 10)->id,
+                'people_id' => People::findOrFail( 25)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 10)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => People::findOrFail( 26)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => People::findOrFail( 26)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => People::findOrFail( 27)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => People::findOrFail( 27)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 12)->id,
+                'people_id' => People::findOrFail( 28)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 12)->id,
+                'people_id' => People::findOrFail( 28)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 12)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 29)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 29)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 30)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 30)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 31)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 31)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => People::findOrFail( 32)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => People::findOrFail( 32)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => People::findOrFail( 33)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => People::findOrFail( 33)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 34)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 34)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 35)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 35)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 36)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 36)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 37)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 37)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => People::findOrFail( 38)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => People::findOrFail( 38)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => People::findOrFail( 39)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => People::findOrFail( 39)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => null,
+                'cost_type_id' => 5,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => People::findOrFail( 40)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 3)->id,
+                'people_id' => People::findOrFail( 40)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => People::findOrFail( 41)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 4)->id,
+                'people_id' => People::findOrFail( 41)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => People::findOrFail( 42)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 7)->id,
+                'people_id' => People::findOrFail( 42)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 43)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 8)->id,
+                'people_id' => People::findOrFail( 43)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => People::findOrFail( 44)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 11)->id,
+                'people_id' => People::findOrFail( 44)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 12)->id,
+                'people_id' => People::findOrFail( 45)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 12)->id,
+                'people_id' => People::findOrFail( 45)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 46)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 13)->id,
+                'people_id' => People::findOrFail( 46)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => People::findOrFail( 47)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 14)->id,
+                'people_id' => People::findOrFail( 47)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 48)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 15)->id,
+                'people_id' => People::findOrFail( 48)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => People::findOrFail( 49)->id,
+                'cost_type_id' => 3,
+                'permission' => true,
+            ],
+            [
+                'flat_id' => Flat::findOrFail( 16)->id,
+                'people_id' => People::findOrFail( 49)->id,
+                'cost_type_id' => 4,
+                'permission' => true,
+            ]
+        ];
+
+        Permission::truncate();
+        foreach ($permissions as $permission) {
+            Permission::create($permission);
+        }
+    }
+}

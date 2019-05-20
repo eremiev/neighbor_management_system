@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeCostsTable extends Migration
+class CreateCostTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTypeCostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_costs', function (Blueprint $table) {
+        Schema::create('cost_types', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('entrance_id');
             $table->string('type');
-            $table->enum('period', ['месец', 'година']);
+            $table->enum('period', ['месец', 'година','апартамент']);
             $table->decimal('price');
             $table->timestamps();
 
@@ -38,11 +38,11 @@ class CreateTypeCostsTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('type_costs')) {
-            Schema::table('type_costs', function (Blueprint $table) {
-                $table->dropForeign('type_costs_entrance_id_foreign');
+        if (Schema::hasTable('cost_types')) {
+            Schema::table('cost_types', function (Blueprint $table) {
+                $table->dropForeign('cost_types_entrance_id_foreign');
             });
-            Schema::drop('type_costs');
+            Schema::drop('cost_types');
         }
     }
 }

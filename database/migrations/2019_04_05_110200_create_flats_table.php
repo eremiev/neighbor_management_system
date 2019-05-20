@@ -17,6 +17,7 @@ class CreateFlatsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('entrance_id');
             $table->unsignedInteger('ceiling_id')->nullable();
+            $table->string('name');
             $table->integer('number');
             $table->decimal('balance', 2, 2);
             $table->timestamps();

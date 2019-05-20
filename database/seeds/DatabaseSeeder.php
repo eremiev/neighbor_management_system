@@ -21,9 +21,13 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleTableSeeder::class);
         $this->call(UserTableSeeder::class);
         $this->call(EntranceTableSeeder::class);
+        $this->call(CeilingTableSeeder::class);
         $this->call(FlatTableSeeder::class);
         $this->call(PeopleTableSeeder::class);
         $this->call(TypeCostTableSeeder::class);
+        $this->call(PermissionTableSeeder::class);
+        $this->call(InvoiceTableSeeder::class);
+        $this->call(InvoiceHistoryTableSeeder::class);
 
         // Enable mass assignment and foreign key protection.
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

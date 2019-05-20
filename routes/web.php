@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/reports', 'ReportsController@index')->name('reports');
+Route::get('/contacts', 'ContactsController@index')->name('contacts');
+
+
+Route::resource('categories', 'CategoryController', [
+    'only' => ['index', 'create', 'store', 'edit', 'update', 'destroy'],
+]);
+
+Route::resource('files', 'FileController', [
+    'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy'],
+]);

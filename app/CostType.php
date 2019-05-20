@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeCost extends Model
+class CostType extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -17,4 +17,14 @@ class TypeCost extends Model
         'period',
         'price'
     ];
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function history_invoices()
+    {
+        return $this->hasMany(HistoryInvoice::class);
+    }
+
+
 }

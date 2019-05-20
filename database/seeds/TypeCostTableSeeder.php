@@ -1,7 +1,7 @@
 <?php
 
 use App\Entrance;
-use App\TypeCost;
+use App\CostType;
 use Illuminate\Database\Seeder;
 
 class TypeCostTableSeeder extends Seeder
@@ -28,14 +28,20 @@ class TypeCostTableSeeder extends Seeder
             ],
             [
                 'entrance_id' => Entrance::first()->id,
-                'type' => 'Стълбище',
+                'type' => 'Стълбище-чистач',
+                'period' => 'месец',
+                'price' => 2
+            ],
+            [
+                'entrance_id' => Entrance::first()->id,
+                'type' => 'Асансьор',
                 'period' => 'месец',
                 'price' => 2
             ],
             [
                 'entrance_id' => Entrance::first()->id,
                 'type' => 'Фонд ремонт',
-                'period' => 'месец',
+                'period' => 'апартамент',
                 'price' => 5
             ],
             [
@@ -46,9 +52,9 @@ class TypeCostTableSeeder extends Seeder
             ]
         ];
 
-        TypeCost::truncate();
+        CostType::truncate();
         foreach ($typeCosts as $typeCost) {
-            TypeCost::create($typeCost);
+            CostType::create($typeCost);
         }
     }
 }

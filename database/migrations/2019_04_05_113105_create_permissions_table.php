@@ -15,23 +15,27 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('type_cost_id');
-            $table->unsignedInteger('people_id');
+            $table->unsignedInteger('flat_id');
+            $table->unsignedInteger('people_id')->nullable();
+            $table->unsignedInteger('cost_type_id');
             $table->boolean('permission');
             $table->timestamps();
 
-            $table->index(['type_cost_id', 'people_id']);
-            $table->foreign('type_cost_id')
+            $table->index(['cost_type_id', 'people_id', 'flat_id']);
+            $table->foreign('cost_type_id')
                 ->references('id')
-                ->on('type_costs')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->on('cost_types')
+                ->onUpdate('cascade');
+
+            $table->foreign('flat_id')
+                ->references('id')
+                ->on('flats')
+                ->onUpdate('cascade');
 
             $table->foreign('people_id')
                 ->references('id')
                 ->on('people')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
         });
     }
 
@@ -44,7 +48,8 @@ class CreatePermissionsTable extends Migration
     {
         if (Schema::hasTable('permissions')) {
             Schema::table('permissions', function (Blueprint $table) {
-                $table->dropForeign('permissions_type_cost_id_foreign');
+                $table->dropForeign('permissions_flat_id_foreign');
+                $table->dropForeign('permissions_cost_type_id_foreign');
                 $table->dropForeign('permissions_people_id_foreign');
             });
             Schema::drop('permissions');

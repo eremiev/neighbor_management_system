@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Invoice extends Model
+class HistoryInvoice extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,18 +12,19 @@ class Invoice extends Model
      * @var array
      */
     protected $fillable = [
+        'invoice_id',
         'entrance_id',
         'flat_id',
+        'cost_type_id',
         'date',
-        'people',
-        'paid',
+        'amount',
     ];
 
     /**
-     * Get the comments for the blog post.
+     *
      */
-    public function history()
+    public function cost_type()
     {
-        return $this->hasMany(HistoryInvoice::class);
+        return $this->belongsTo(CostType::class);
     }
 }
