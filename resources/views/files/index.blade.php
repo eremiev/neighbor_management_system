@@ -7,13 +7,18 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <a href="{{ URL::route('files.create') }}" class="btn btn-default">Добави</a>
+                        <p class="text-center" style="font-size: 20pt;">Архиви</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <a href="{{ URL::route('files.create') }}" class="btn btn-default">Добави нов файл</a>
                             <span class="pull-right">
             <a href="#search" class="btn btn-default pull-right" data-toggle="collapse">Подробно търсене</a>
                 </span>
                         </div>
                     </div>
+
+
                     <div class="row">
 
                         <div class="col-lg-12">
@@ -21,12 +26,15 @@
                                 <div id="search" class="collapse text-center">
                                     <div class="jumbotron">
                                         @if(! $categories->isEmpty())
-                                            <label>Със тикче изберете категориите които искате да включите в търсенето.</label>
+                                            <label>Със тикче изберете категориите които искате да включите в
+                                                търсенето.</label>
                                             <ul class="list-group" style="height: 100px; overflow: auto">
                                                 @foreach ($categories as $category)
-                                                    <li class="list-group-item" style="padding:0px; margin-bottom: 5px;">
+                                                    <li class="list-group-item"
+                                                        style="padding:0px; margin-bottom: 5px;">
                                                         <label style="display: block; margin:0px;">
-                                                            <input type="checkbox" id="check-{{$category->id}}" name="categories[]" value="{{$category->id}}"/>
+                                                            <input type="checkbox" id="check-{{$category->id}}"
+                                                                   name="categories[]" value="{{$category->id}}"/>
                                                             {{$category->name}}
                                                         </label>
                                                     </li>
@@ -49,7 +57,8 @@
                                 <br/>
                                 <br/>
                                 {{--<p>Резултати:</p>--}}
-                                <p id="list-tags">Филтър по категории: <b><span id="selected_tags">{{$selectedTags}}</span></b></p>
+                                <p id="list-tags">Филтър по категории: <b><span
+                                                id="selected_tags">{{$selectedTags}}</span></b></p>
                                 <p id="list-title">Филтър по заглавие: <b><span id="title"></span></b></p>
                             </div>
                         </div>
@@ -64,31 +73,32 @@
                                 <ul class="list-group">
                                     @if(!$files->isEmpty())
                                         @foreach($files as $file)
-                                            <li class="list-group-item text-center" href="{{ route('categories.edit',[$file->id],false) }}">
-
-                                                <a href="{{ URL::route('files.show',[$file->id],false) }}">  {{$file->title}}</a>
-                                                {{--                                <a href="{{ $book->path }}" target="_blank">  {{$book->title}}</a>--}}
-
-                                                <div class="pull-right col-lg-offset-1">
+                                            <li class="row  text-center list-group-item ">
+                                                <div class=" col-lg-4">
+                                                    <a href="{{ URL::route('files.show',[$file->id],false) }}">  {{$file->title}}</a>
+                                                    {{-- <a href="{{ $book->path }}" target="_blank">  {{$book->title}}</a>--}}
+                                                </div>
+                                                <div class=" col-lg-5 col-lg-offset-2">
 
                                                     {!! Form::open([
                                                     'route' => ['files.destroy', $file->id],
                                                     'method' => 'delete',
-                                                    'class' => 'col-lg-offset-2  col-lg-1']) !!}
-                                                    {!! Form::submit('X',
+                                                    'class' => 'pull-right']) !!}
+                                                    {!! Form::submit('Изтрий',
                                                     [ 'class' => 'btn btn-xs btn-danger pull-right',
                                                     'onclick' => "return confirm('Сигурни ли сте?');" ]) !!}
                                                     {!! Form::close() !!}
+
+                                                    <div class="pull-left">
+                                                        <a href="{{ URL::route('files.edit',[$file->id],false) }}">Промени
+                                                        </a>
+                                                    </div>
                                                 </div>
 
-                                                <div class="pull-right">
-                                                    <a href="{{ URL::route('files.edit',[$file->id],false) }}">Edit
-                                                    </a>
-                                                </div>
                                             </li>
                                         @endforeach
                                     @else
-                                        <p class="text-center">Няма намерени книги!</p>
+                                        <p class="text-center">Няма намерени файлове!</p>
                                     @endif
                                 </ul>
                             </div>
@@ -127,6 +137,7 @@
                                 document.getElementById('list-tags').style.display = 'block';
                             }
                         })();
+
                         function search() {
                             var checkboxes = document.getElementsByName('categories[]');
                             var title = document.getElementsByName('title');
@@ -141,7 +152,7 @@
                                     var category = 'category=' + vals.substring(1) + '&';
                                 if (title != 'undefined')
                                     var title = 'title=' + title[0].value + '&';
-                                window.location.replace('http://' + window.location.hostname + '/files?' + category + title );
+                                window.location.replace('http://' + window.location.hostname + '/files?' + category + title);
                             } else {
                                 window.location.replace('http://' + window.location.hostname + '/files');
                             }

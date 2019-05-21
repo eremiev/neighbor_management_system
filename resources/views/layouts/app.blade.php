@@ -56,6 +56,9 @@
                         <li>
                             <a href="{{route('categories.index')}}">Категории</a>
                         </li>
+                        <li>
+                            <a href="{{route('comments.index')}}">Коментари</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

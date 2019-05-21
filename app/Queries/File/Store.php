@@ -16,7 +16,8 @@ class Store
         Storage::put($fileName, file_get_contents($file), 'public');
         $inputs['path'] = Storage::url($fileName);
         $book = File::create($inputs);
-        $book->categories()->sync($inputs['categories']);
+        $categories = array_key_exists('categories',$inputs) ? $inputs['categories'] : [];
+        $book->categories()->sync($categories);
         \Session::flash('flash_message', 'Вашият файл "' . $book->title . '" беше добавен!');
         DB::commit();
     }

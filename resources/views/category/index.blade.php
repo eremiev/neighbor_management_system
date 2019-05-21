@@ -7,34 +7,43 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <a href="{{ URL::route('categories.create') }}" class="btn btn-default">Добави</a>
+                        <p class="text-center" style="font-size: 20pt;">Категории</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <a href="{{ URL::route('categories.create') }}" class="btn btn-default">Добави нова
+                                категория</a>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin-top: 20px;">
                         <div class="list-group col-lg-offset-2 col-lg-8">
                             <div class="bs-component">
                                 <ul class="list-group">
                                     @foreach($categories as $category)
-                                        <li class="list-group-item text-center"
-                                            href="{{ route('categories.edit',[$category->id],false) }}">
-                                            {{$category->name}}
-                                            <div class="pull-right col-lg-offset-1">
+                                        <li class="row  text-center list-group-item ">
+
+                                            <div class=" col-lg-4">
+                                                {{$category->name}}
+                                                {{-- <a href="{{ $book->path }}" target="_blank">  {{$book->title}}</a>--}}
+                                            </div>
+                                            <div class=" col-lg-5 col-lg-offset-2">
 
                                                 {!! Form::open([
-                                                'route' => ['categories.destroy', $category->id],
-                                                'method' => 'delete',
-                                                'class' => 'col-lg-offset-2  col-lg-1']) !!}
-                                                {!! Form::submit('X',
+                                                    'route' => ['categories.destroy', $category->id],
+                                                    'method' => 'delete',
+                                                    'class' => 'pull-right']) !!}
+                                                {!! Form::submit('Изтрий',
                                                 [ 'class' => 'btn btn-xs btn-danger pull-right',
                                                 'onclick' => "return confirm('Сигурни ли сте?');" ]) !!}
                                                 {!! Form::close() !!}
+
+                                                <div class="pull-left">
+                                                    <a href="{{ URL::route('categories.edit',[$category->id],false) }}">Промени
+                                                    </a>
+                                                </div>
                                             </div>
 
-                                            <div class="pull-right">
-                                                <a href="{{ URL::route('categories.edit',[$category->id],false) }}">Edit
-                                                </a>
-                                            </div>
                                         </li>
                                     @endforeach
                                 </ul>

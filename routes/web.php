@@ -29,3 +29,7 @@ Route::resource('categories', 'CategoryController', [
 Route::resource('files', 'FileController', [
     'only' => ['index', 'create', 'show', 'store', 'edit', 'update', 'destroy'],
 ]);
+
+Route::resource('comments', 'CommentController', [
+    'only' => ['index', 'store',  'update', 'destroy'],
+]);
