@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Flat;
 use Illuminate\Http\Request;
 
 class ContactsController extends Controller
@@ -13,6 +14,9 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        return view('contacts');
+        $flats = Flat::where('entrance_id',1)->with('people')->get();
+
+
+        return view('contacts', compact('flats'));
     }
 }

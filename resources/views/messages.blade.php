@@ -5,7 +5,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <p class="text-center" style="font-size: 20pt;">Коментари</p>
+                    <div class="row">
+                        <p class="text-center" style="font-size: 20pt;">Коментари</p>
+                    </div>
                     <div class="row">
 
                         {!! Form::open(['route' => ['comments.store'],
