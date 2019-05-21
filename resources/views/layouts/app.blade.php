@@ -40,25 +40,25 @@
                 <!-- Left Side Of Navbar -->
                 @if (Auth::check())
                     <ul class="nav navbar-nav">
-                        <li>
+                        <li class="{{ setActive('home') }}">
                             <a href="#">Начало</a>
                         </li>
-                        <li>
-                            <a href="#">Членове на сем.</a>
+                        <li class="{{ setActive('members.index') }}">
+                            <a href="{{route('members.index')}}">Членове на сем.</a>
                         </li>
-                        <li>
+                        <li class="{{ setActive('reports') }}">
                             <a href="{{route('reports')}}">Отчети</a>
                         </li>
-                        <li>
+                        <li class="{{ setActive('contacts') }}">
                             <a href="{{route('contacts')}}">Контакти</a>
                         </li>
-                        <li>
+                        <li class="{{ setActive('files/*') }}">
                             <a href="{{route('files.index')}}">Архиви</a>
                         </li>
-                        <li>
+                        <li class="{{ setActive('categories.index') }}">
                             <a href="{{route('categories.index')}}">Категории</a>
                         </li>
-                        <li>
+                        <li class="{{ setActive('comments.index') }}">
                             <a href="{{route('comments.index')}}">Коментари</a>
                         </li>
                     </ul>

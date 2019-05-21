@@ -33,4 +33,12 @@ class People extends Model
     {
         return $this->belongsTo(Ceiling::class);
     }
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function permissions()
+    {
+        return $this->hasMany(Permission::class);
+    }
 }

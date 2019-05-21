@@ -22,6 +22,10 @@ Route::get('/reports', 'ReportsController@index')->name('reports');
 Route::get('/contacts', 'ContactsController@index')->name('contacts');
 
 
+Route::resource('members', 'MemberController', [
+    'only' => ['index', 'create', 'store', 'edit', 'update', 'destroy'],
+]);
+
 Route::resource('categories', 'CategoryController', [
     'only' => ['index', 'create', 'store', 'edit', 'update', 'destroy'],
 ]);

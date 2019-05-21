@@ -13,7 +13,7 @@
                             </div>
 
                             <div class="bs-component">
-                                <table class="table table-striped table-hover ">
+                                <table class="table table-striped table-hover">
                                     <thead>
                                     <tr>
                                         <th>Ап.</th>
@@ -25,7 +25,7 @@
 
                                     @foreach($flats as $flat)
                                         @foreach($flat->people as $person)
-                                            <tr @if($person->ceiling_id) class="info" @endif>
+                                            <tr @if($person->ceiling_id) class="info"@endif>
                                                 <td>{{ $flat->id }}</td>
                                                 <td>{{ $person->name }}</td>
                                                 <td>{{ $person->phone }}</td>
@@ -38,7 +38,7 @@
                                 <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt;
                                     &gt;
                                 </div>
-                            </div><!-- /example -->
+                            </div>
                         </div>
 
 
