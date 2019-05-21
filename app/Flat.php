@@ -41,4 +41,10 @@ class Flat extends Model
     {
         return $this->hasMany(People::class);
     }
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+
+    }
 }

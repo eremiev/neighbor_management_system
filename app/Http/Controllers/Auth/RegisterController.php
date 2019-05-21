@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Flat;
 use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -52,6 +53,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|numeric|min:4|confirmed',
+            'flat_id' => 'required',
         ]);
     }
 
@@ -67,11 +69,24 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'flat_id' => (int)$data['flat_id']
         ]);
 //        $user
 //            ->roles()
 //            ->attach(Role::where('name', 'member')->firstOrFail());
 
         return $user;
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $flats = Flat::with('user')->get();
+
+        return view('auth.register', compact('flats'));
     }
 }

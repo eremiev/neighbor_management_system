@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'flat_id',
     ];
 
     /**
@@ -58,7 +58,6 @@ class User extends Authenticatable
         return null !== $this->roles()->whereIn('name', $roles)->first();
     }
 
-
     /**
      * Check one role
      * @param $role
@@ -67,6 +66,12 @@ class User extends Authenticatable
     public function hasRole($role)
     {
         return null !== $this->roles()->where('name', $role)->first();
+    }
+
+    public function flats()
+    {
+        return $this->belongsTo(Flat::class);
+
     }
 
 }
