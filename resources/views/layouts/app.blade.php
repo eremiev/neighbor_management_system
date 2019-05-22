@@ -13,6 +13,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
 </head>
 <body>
 <div id="app">
@@ -103,5 +108,48 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $( function() {
+        var dateFormat = "yy-mm-dd",
+            from = $( "#from" )
+                .datepicker({
+                    // defaultDate: "+1w",
+                    changeMonth: true,
+                    changeYear: true,
+                    numberOfMonths: 1,
+                    showButtonPanel: true,
+                    dateFormat: "yy-mm-dd"
+                })
+                .on( "change", function() {
+                    to.datepicker( "option", "minDate", getDate( this ) );
+                }),
+            to = $( "#to" ).datepicker({
+                // defaultDate: "+1w",
+                changeMonth: true,
+                changeYear: true,
+                numberOfMonths: 1,
+                showButtonPanel: true,
+                dateFormat: "yy-mm-dd"
+
+            })
+                .on( "change", function() {
+                    from.datepicker( "option", "maxDate", getDate( this ) );
+                });
+
+        function getDate( element ) {
+            var date;
+            try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+            } catch( error ) {
+                date = null;
+            }
+
+            return date;
+        }
+    } );
+</script>
 </body>
 </html>

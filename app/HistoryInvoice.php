@@ -27,4 +27,12 @@ class HistoryInvoice extends Model
     {
         return $this->belongsTo(CostType::class);
     }
+
+    /**
+     * Get the post that owns the comment.
+     */
+    public function invoice()
+    {
+        return $this->belongsTo(Invoice::class);
+    }
 }

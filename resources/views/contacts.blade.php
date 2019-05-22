@@ -35,12 +35,8 @@
 
                                     </tbody>
                                 </table>
-                                <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt;
-                                    &gt;
-                                </div>
                             </div>
                         </div>
-
 
                     </div>
                 </div>
