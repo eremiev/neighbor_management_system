@@ -30,8 +30,9 @@ class ReportsController extends Controller
             $dates['from'] = $from;
         }
         if (array_key_exists('to', $inputs)) {
-            $dateTo = DateTime::createFromFormat('Y-m-d', substr($inputs['to'], 0, -2) . '01');
-            $to = $dateTo->format('Y-m-d');
+//            $dateTo = DateTime::createFromFormat('Y-m-d', substr($inputs['to'], 0, -2) . '02');
+            $dateTo = DateTime::createFromFormat('Y-m-d', $inputs['to']);
+            $to = $dateTo->modify('last day of this month')->format('Y-m-d');
             $dates['to'] = $to;
 
         }

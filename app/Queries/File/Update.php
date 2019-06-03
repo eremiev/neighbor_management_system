@@ -13,14 +13,15 @@ class Update
         DB::beginTransaction();
         $book = File::find($id);
         //Rename file
-        $ext = pathinfo($book->path, PATHINFO_EXTENSION);
-        $oldFileName = last(explode('/', $book->path));
+        $ext = pathinfo(storage_path('app/' . $book->filename), PATHINFO_EXTENSION);
+
         $fileName = str_slug($inputs['title'], '-') . '.' . $ext;
-        if ($oldFileName != $fileName) {
-            Storage::move($oldFileName, $fileName);
+        if ($book->filename != $fileName) {
+            Storage::move($book->filename, $fileName);
         }
-        $inputs['path'] = Storage::url($fileName);
-        $book->categories()->sync($inputs['categories']);
+        $inputs['filename'] = $fileName;
+        $categories = array_key_exists('categories',$inputs) ? $inputs['categories'] : [];
+        $book->categories()->sync($categories);
         $book->update($inputs);
         \Session::flash('flash_message', 'Вашият файл"' . $book->title . '" беше редактиран успешно!');
         DB::commit();

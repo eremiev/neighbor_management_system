@@ -66,16 +66,19 @@ class FileController extends Controller
      */
     public function show($id)
     {
-        $book = File::find($id);
-        $bookTitle = $book->title;
-        $fileName = last(explode('/', $book->path));
-        $contentType = Storage::mimeType($fileName);
-        if ($contentType == 'application/pdf' || $contentType == 'image/jpeg')
-            $link = $book->path;
-        else
-            $link = 'https://view.officeapps.live.com/op/embed.aspx?src=' . $book->path;
+        $file = File::find($id);
+//        $bookTitle = $file->title;
+//        $fileName = last(explode('/', $book->path));
+//        $contentType = Storage::mimeType($fileName);
+//        if ($contentType == 'application/pdf' || $contentType == 'image/jpeg')
+//            $link = $book->path;
+//        else
+//            $link = 'https://view.officeapps.live.com/op/embed.aspx?src=' . $book->path;
 
-        return view('files.show', compact(['link', 'bookTitle']));
+
+
+        return response()->download(storage_path('app/' . $file->filename));
+//        return view('files.show', compact(['link', 'bookTitle']));
     }
     /**
      * Show the form for editing the specified resource.

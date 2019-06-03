@@ -48,7 +48,7 @@
                             <div class="col-lg-8 col-md-offset-2">
                                 <div>От: <i><b>{{ $comment->user->name }}</b></i> <br>
                                     Дата:
-                                    <b><i>{{ Carbon\Carbon::parse($comment->created_at)->format('d-m-Y i:s') }}</i></b>
+                                    <b><i>{{ Carbon\Carbon::parse($comment->created_at)->format('d-m-Y H:i:s') }}</i></b>
                                 </div>
                                 <div class="jumbotron">
                                     <p><i>{{ $comment->message }}</i></p>

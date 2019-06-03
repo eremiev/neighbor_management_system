@@ -13,7 +13,7 @@ class File extends Model
      */
     protected $fillable = [
         'title',
-        'path',
+        'filename',
         'description',
     ];
     protected $hidden = [

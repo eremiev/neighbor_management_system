@@ -14,7 +14,7 @@ class Store
         $file = $inputs['file'];
         $fileName = str_slug($inputs['title'], '-') .  '.' . $file->getClientOriginalExtension();
         Storage::put($fileName, file_get_contents($file), 'public');
-        $inputs['path'] = Storage::url($fileName);
+        $inputs['filename'] = $fileName;
         $book = File::create($inputs);
         $categories = array_key_exists('categories',$inputs) ? $inputs['categories'] : [];
         $book->categories()->sync($categories);

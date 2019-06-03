@@ -13,8 +13,7 @@ class Destroy
     {
         DB::beginTransaction();
         $file = File::find($id);
-        $path = explode('/', $file->path);
-        Storage::delete(end($path));
+        Storage::delete($file->filename);
         $file->delete();
         \Session::flash('flash_message', 'Вашият файл "' . $file->title . '" беше изтрит!');
         DB::commit();
