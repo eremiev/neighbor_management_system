@@ -48,7 +48,12 @@ class MemberController extends Controller
      */
     public function store(MemberRequest $request)
     {
-        $inputs = $request->only('name', 'phone', 'costs');
+        $inputs = $request->only('name', 'phone', 'costs', 'active');
+
+        if (!$request->has('active')) {
+            $inputs['active'] = 0;
+        }
+
         $user = Auth::user();
         $inputs['flat_id'] = $user->flat_id;
 
@@ -106,8 +111,11 @@ class MemberController extends Controller
      */
     public function update(MemberRequest $request, $id)
     {
-        $inputs = $request->only('name', 'phone');
+        $inputs = $request->only('name', 'phone', 'active');
 
+        if (!$request->has('active')) {
+            $inputs['active'] = 0;
+        }
         $member = People::find($id);
         $member->update($inputs);
         $costsInput = $request->only('costs');

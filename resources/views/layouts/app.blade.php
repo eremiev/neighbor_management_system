@@ -46,7 +46,7 @@
                 @if (Auth::check())
                     <ul class="nav navbar-nav">
                         <li class="{{ setActive('home') }}">
-                            <a href="#">Начало</a>
+                            <a href="{{route('home')}}">Начало</a>
                         </li>
                         <li class="{{ setActive('members.index') }}">
                             <a href="{{route('members.index')}}">Членове на сем.</a>
@@ -62,6 +62,9 @@
                         </li>
                         <li class="{{ setActive('categories.index') }}">
                             <a href="{{route('categories.index')}}">Категории</a>
+                        </li>
+                        <li class="{{ setActive('flats.index') }}">
+                            <a href="{{route('flats.index')}}">Събиране на такси</a>
                         </li>
                         <li class="{{ setActive('comments.index') }}">
                             <a href="{{route('comments.index')}}">Коментари</a>

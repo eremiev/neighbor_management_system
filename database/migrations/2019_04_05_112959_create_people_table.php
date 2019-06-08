@@ -19,6 +19,7 @@ class CreatePeopleTable extends Migration
             $table->unsignedInteger('ceiling_id')->nullable();
             $table->string('name');
             $table->string('phone');
+            $table->boolean('active')->default(true);
             $table->timestamps();
 
             $table->index(['flat_id', 'ceiling_id']);

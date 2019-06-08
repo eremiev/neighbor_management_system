@@ -15,7 +15,8 @@ class People extends Model
         'flat_id',
         'ceiling_id',
         'name',
-        'phone'
+        'phone',
+        'active'
     ];
 
     /**

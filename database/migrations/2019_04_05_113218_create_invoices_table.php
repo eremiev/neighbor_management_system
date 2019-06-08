@@ -15,10 +15,10 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('entrance_id');
-            $table->unsignedInteger('flat_id');
+            $table->unsignedInteger('entrance_id')->nullable();
+            $table->unsignedInteger('flat_id')->nullable();
             $table->integer('people')->default(0);
-            $table->boolean('paid');
+            $table->boolean('paid')->default(false);
             $table->date('date');
             $table->timestamps();
 

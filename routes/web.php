@@ -37,3 +37,8 @@ Route::resource('files', 'FileController', [
 Route::resource('comments', 'CommentController', [
     'only' => ['index', 'store',  'update', 'destroy'],
 ]);
+
+
+Route::resource('flats', 'FlatController', [
+    'only' => ['index', 'edit',  'update'],
+]);

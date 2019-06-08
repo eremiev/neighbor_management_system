@@ -15,6 +15,7 @@ class HistoryInvoice extends Model
         'invoice_id',
         'entrance_id',
         'flat_id',
+        'ceiling_id',
         'cost_type_id',
         'date',
         'amount',

@@ -7,9 +7,12 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="row">
-                        <p class="text-center" style="font-size: 20pt;">Категории</p>
+                        <div class="col-lg-12">
+                            <div class="page-header">
+                                <p class="text-center" style="font-size: 20pt;">Категории</p>
+                            </div>
+                        </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <a href="{{ URL::route('categories.create') }}" class="btn btn-default">Добави нова

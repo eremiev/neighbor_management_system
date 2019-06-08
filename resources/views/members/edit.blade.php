@@ -23,6 +23,13 @@
                                 @include('errors.validation')
 
                                 <div class="form-group">
+                                    <label for="name-bg" class="col-lg-2 control-label">Активен</label>
+                                    <div class="col-lg-10">
+                                        {{ Form::checkbox('active',1, $member['active']) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="name-bg" class="col-lg-2 control-label">Име</label>
                                     <div class="col-lg-10">
                                         <input type="text"
@@ -56,9 +63,9 @@
                                                     {{$cost->type}} - {{$cost->price}} лв. / {{$cost->period}}
                                                 </label>
                                             @else
-                                            <label>
-                                                {{ Form::checkbox('costs[]', $cost->id, in_array($cost->id, $oldPermissions)) }}
-                                                {{$cost->type}} - {{$cost->price}} лв. / {{$cost->period}} </label>
+                                                <label>
+                                                    {{ Form::checkbox('costs[]', $cost->id, in_array($cost->id, $oldPermissions)) }}
+                                                    {{$cost->type}} - {{$cost->price}} лв. / {{$cost->period}} </label>
 
                                             @endif
                                             <br>

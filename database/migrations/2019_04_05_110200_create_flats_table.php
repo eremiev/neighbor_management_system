@@ -19,7 +19,7 @@ class CreateFlatsTable extends Migration
             $table->unsignedInteger('ceiling_id')->nullable();
             $table->string('name');
             $table->integer('number');
-            $table->decimal('balance', 2, 2);
+            $table->decimal('balance', 4, 2);
             $table->timestamps();
 
             $table->index(['entrance_id', 'ceiling_id']);

@@ -6,7 +6,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="row">
-                        <p class="text-center" style="font-size: 20pt;">Членове</p>
+                        <div class="col-lg-12">
+                            <div class="page-header">
+                                <p class="text-center" style="font-size: 20pt;">Членове</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
@@ -24,6 +28,7 @@
                                         <th>Ап.</th>
                                         <th>Име</th>
                                         <th>Телефон</th>
+                                        <th>Статус</th>
                                         <th>Редактирай</th>
                                         <th>Изтрий</th>
                                     </tr>
@@ -39,6 +44,7 @@
                                             <td>{{ $member->flat_id }}</td>
                                             <td>{{ $member->name }}</td>
                                             <td>{{ $member->phone }}</td>
+                                            <td>@if($member->active)Активен@elseНеактивен@endif</td>
                                             <td><a href="{{ URL::route('members.edit',[$member->id],false) }}">Редактирай</a></td>
                                             <td>
                                                 {!! Form::open([

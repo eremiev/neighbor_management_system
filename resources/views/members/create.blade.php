@@ -22,6 +22,13 @@
                                 @include('errors.validation')
 
                                 <div class="form-group">
+                                    <label for="name-bg" class="col-lg-2 control-label">Активен</label>
+                                    <div class="col-lg-10">
+                                        {{ Form::checkbox('active', 1) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="name-bg" class="col-lg-2 control-label">Име</label>
                                     <div class="col-lg-10">
                                         <input type="text"
